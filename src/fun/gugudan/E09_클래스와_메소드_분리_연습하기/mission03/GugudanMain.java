@@ -7,9 +7,14 @@ public class GugudanMain {
         // 예를 들어 사용자가 "8,7"과 같은 문자열을 입력하면 팔칠단을 구현한다.
         // 팔칠단은 2 * 1 ... 2 * 7, 3 * 1 ... 3 * 7, ... , 8 * 1 ... 8 * 7 까지 구현하는 것을 의미한다.
 
-        String input = GugudanInput.input();
-        int[] inputValues = InputValue.setInput(input);
-        int[][] result = Gugudan.calculate(inputValues[0], inputValues[1]);
+//        String input = GugudanInput.input();
+//        int[] inputValues = InputValue.setInput(input);
+//        int[][] result = Gugudan.calculate(inputValues[0], inputValues[1]);
+//        GugudanOutput.print(result);
+
+        int[] inputValues = GugudanInput.input();
+        InputValue inputValue = new InputValue(inputValues[0], inputValues[1]); // 생성자로 개선
+        int[][] result = Gugudan.calculate(inputValue.getRow(), inputValue.getColumn());
         GugudanOutput.print(result);
     }
 }
